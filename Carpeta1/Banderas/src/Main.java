@@ -167,9 +167,11 @@ public class Main {
 
                 if (row%2 == 0) {
                     flag[row][cell] = COLOR_RED;
+                } 
                 else {
                     flag[row][cell] = COLOR_WHITE;
                 }
+            
 
             }
         }
@@ -189,15 +191,18 @@ public class Main {
         }
         return flag;
     }
+    
     public static int[][] createCZEFlag (int heigth, int width) {
         int [][] flag = new int[heigth][width];
         int rowend =0;
         int cellend = 0;
+        int rowIn = 0;
         int x = 1;
+
         rowend = (int)(heigth*0.5);
         cellend = (int)(width) ;
         
-        for (int row = 0; row<rowend; row++) {
+        for (int row = rowIn; row<rowend; row++) {
             for (int cell =0; cell<x; cell ++) {
                 flag[row][cell] = COLOR_BLUE;
 
@@ -205,7 +210,7 @@ public class Main {
             x++;
         }
         
-        x = 6;
+        x = (int)(heigth*0.5);
         rowend = (int)(heigth);
         for (int row = (int)(heigth*0.5); row<rowend; row++) {
             for (int cell =x-1; cell>-1; cell--) {
@@ -214,7 +219,6 @@ public class Main {
             }
             x--;
         }
-         
         x = 1;
         rowend = (int)(heigth*0.5);
         for (int row = 0; row<rowend; row++) {
@@ -223,469 +227,304 @@ public class Main {
             }
             x++;
         }
-        x = 6;
+        x= (int)(heigth*0.5);
+        rowIn = (int)(heigth*0.5);
         rowend = (int)(heigth);
-        for (int row = 6; row<rowend; row++) {
+        for (int row = rowIn; row<rowend; row++) {
             for (int cell =x; cell<cellend; cell++) {
                 flag[row][cell] = COLOR_RED;
             }
             x--;
-        }
-        return flag;
-    }
-    public static int[][] createDNKFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int rowend =0;
-        int cellend = 0;
-        int x = 0;
-        rowend = (int)(heigth*0.45);
-        cellend = (int)(width*0.25);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-        
-            }
-            
-        }
-        x = 7;
-        rowend = (int)(heigth);
-        for (int row = x; row<rowend; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-        
-            }
-            
-        }
-         x = 7;
-        cellend = (int)(width);
-        
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-        
-            }
-            
-        }
-         x = 6;
-        for (int row = x; row<rowend; row++) {
-            for (int cell =x+1; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-        
-            }   
-        }
-
-          x = 7;
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =5; cell<7; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-        
-            }
-           
-        }
-        
-        for (int row = 5; row<7; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-        
-            }
-        }
-        return flag;
-        }
-
-        public static int[][] createFINFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int rowend =0;
-        int cellend = 0;
-        int x = 0;
-        rowend = (int)(heigth*0.4);
-        cellend = (int)(width*0.2);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        x = 8;
-        rowend = (int)(heigth);
-        for (int row = x; row<rowend; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        rowend = (int)(heigth*0.4);
-        cellend = (int)(width);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        rowend = (int)(heigth);
-        for (int row = x; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-         x = 4;
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<8; cell++) {
-                flag[row][cell] = COLOR_BLUE;
-            }
-        }
-        for (int row = 4; row<8; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_BLUE;
-            }
-        }
-        return flag;
-        }
-
-        public static int[][] createNORFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int rowend =0;
-        int cellend = 0;
-        int x = 0;
-        rowend = (int)(heigth*0.4);
-        cellend = (int)(width*0.2);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-            }
-        }
-        x = 8;
-        cellend = (int)(width);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-            }
-        }
-        rowend = (int)(heigth);
-        cellend = (int)(width*0.2);
-        for (int row = x; row<rowend; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-            }
-        }
-        cellend = (int)(width);
-        for (int row = x; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_RED;
-            }
-        }
-        x = 4;
-        rowend = (int)(heigth*0.4);
-        for (int row = x; row<x+1; row++) {
-            for (int cell =0; cell<5; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        x = 7;
-        for (int row = x; row<x+1; row++) {
-            for (int cell =0; cell<5; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        x = 4;
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<x+1; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        rowend = (int)(heigth);
-        for (int row = 8; row<rowend; row++) {
-            for (int cell =x; cell<x+1; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-           x = 7;
-        rowend = (int)(heigth*0.4);
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<x+1; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        rowend = (int)(heigth);
-        for (int row = 8; row<rowend; row++) {
-            for (int cell =x; cell<x+1; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        for (int row = x; row<x+1; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        for (int row = 4; row<5; row++) {
-            for (int cell =x; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_WHITE;
-            }
-        }
-        x = 5;
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =x; cell<x+2; cell++) {
-                flag[row][cell] = COLOR_BLUE;
-            }
-        }
-        for (int row = x; row<x+2; row++) {
-            for (int cell =0; cell<cellend; cell++) {
-                flag[row][cell] = COLOR_BLUE;
-            }
         }
         return flag;
     }
     
+    public static int[][] createDNKFlag (int heigth, int width) {
+         int[][] flag= new int[heigth][width];
+        int rowIn = 0;
+        int rowEnd = 0;
+        rowEnd = (int)(heigth*0.40);
+        for(int row=rowIn;row< rowEnd;row++){
+            for(int cell = 0; cell<flag[row].length;cell++) {
+                if(cell >= flag[row].length*0.25 && cell<=flag[row].length*0.35){
+                    flag[row][cell]=COLOR_WHITE;
+                }
+                else {
+                    flag[row][cell] = COLOR_RED;
+                }
+            }
+        }
+        rowIn = (int)(heigth*0.40);
+        rowEnd = (int)(heigth*0.60);
+        for(int row=rowIn;row< rowEnd;row++){
+            for(int cell=0;cell<flag[row].length;cell++) {
+                flag[row][cell] = COLOR_WHITE;
+            }
+        }
+        rowIn = (int)(heigth*0.60);
+        for(int row=rowIn;row< flag.length;row++){
+            for(int cell=0;cell<flag[row].length;cell++) {
+                if(cell>=flag[row].length*0.25&&cell<=flag[row].length*0.35){
+                    flag[row][cell]=COLOR_WHITE;
+                }
+                else {
+                    flag[row][cell] = COLOR_RED;
+                }
+            }
+        }
+        return flag;
+    }
+        
+        public static int[][] createFINFlag (int heigth, int width) {
+            int[][] flag= new int[heigth][width];
+            int rowIn=0;
+            int rowEnd=0;
+
+            rowEnd=(int)(heigth*0.3333)+1;
+            for(int row=rowIn; row<rowEnd;row++){
+                for(int cell=0; cell<flag[row].length;cell++) {
+                    if(cell>=flag[row].length*0.20&&cell<=flag[row].length*0.40){
+                        flag[row][cell]=COLOR_BLUE;
+                    }
+                    else {
+                        flag[row][cell] = COLOR_WHITE;
+                    }
+                }
+            }
+            rowIn =(int)(heigth*0.3333)+1;
+            rowEnd=(int)(heigth*0.6666)+1;
+            for(int row=rowIn;row< rowEnd;row++){
+                for(int cell=0;cell<flag[row].length;cell++) {
+                    flag[row][cell] = COLOR_BLUE;
+                }
+            }
+            rowIn=(int)(heigth*0.6666)+1;
+            for(int row = rowIn;row< flag.length;row++){
+                for(int cell = 0;cell<flag[row].length;cell++) {
+                    if(cell >= flag[row].length*0.20&&cell<=flag[row].length*0.40){
+                        flag[row][cell]=COLOR_BLUE;
+                    }
+                    else {
+                        flag[row][cell] = COLOR_WHITE;
+                    }
+                }
+            }
+            return flag;
+        }
+    
+
+        public static int[][] createNORFlag (int heigth, int width) {
+            int[][] flag= new int[heigth][width];
+            int rowIn = 0;
+            int rowEnd = 0;
+
+            rowEnd=(int)(heigth*0.3333)+1;
+            for(int row=rowIn;row< rowEnd;row++){
+                for(int cell = 0;cell<flag[row].length;cell++) {
+                    if(cell>=flag[row].length*0.20&&cell<=flag[row].length*0.40){
+                        if(cell<flag[row].length*0.25||cell>flag[row].length*0.35){
+                            flag[row][cell]=COLOR_WHITE;
+                        }
+                        else {
+                            flag[row][cell] = COLOR_BLUE;
+                        }
+                    }
+                    else {
+                        flag[row][cell] = COLOR_RED;
+                    }
+                }
+            }
+            rowIn=(int)(heigth*0.3333)+1;
+            rowEnd=(int)(heigth*0.6666)+1;
+            for(int row=rowIn;row< rowEnd;row++){
+                for(int cell=0;cell<flag[row].length;cell++) {
+                    if((row<=flag.length*0.416633||row>=flag.length*0.583267)&&(cell<flag[row].length*0.25||cell>flag[row].length*0.35)){
+                        flag[row][cell]=COLOR_WHITE;
+    
+                    }
+                    else {
+                        flag[row][cell] = COLOR_BLUE;
+                    }
+                }
+            }
+            rowIn =(int)(heigth*0.6666)+1;
+            for(int row=rowIn;row< flag.length;row++){
+                for(int cell=0;cell<flag[row].length;cell++) {
+                    if(cell>=flag[row].length*0.20&&cell<=flag[row].length*0.40){
+                        if(cell<flag[row].length*0.25||cell>flag[row].length*0.35){
+                            flag[row][cell]=COLOR_WHITE;
+                        }
+                        else {
+                            flag[row][cell] = COLOR_BLUE;
+                        }
+                    }
+                    else {
+                        flag[row][cell] = COLOR_RED;
+                    }
+                }
+            }
+            return flag;
+        }
+    
+    
     public static int[][] createKWTFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int rowend =0;
-        int cellend = 0;
-        int x = 0;
-        rowend = (int)(heigth*0.5);
-        cellend = (int)(width);
-        
-        for (int row = 0; row<rowend; row++) {
-            for (int cell =0; cell<6; cell ++) {
-                flag[row][cell] = COLOR_BLACK;
-
+        int [][]flag=new int[heigth][width];
+        int rowIn=0;
+        int rowEnd=0;
+        int x=1;
+        int y=1;
+        rowEnd=(int)(heigth*0.50);
+        for(int i=rowIn;i< rowEnd;i++){
+            for(int j=0;j<x;j++){
+                if(j>flag[i].length*0.20){
+                    flag[i][j]=COLOR_WHITE;
+                }
+                else {
+                    flag[i][j] = COLOR_BLACK;
+                }
             }
+            for(int j=y;j<flag[i].length;j++){
+                if(i>flag.length*0.3333){
+                    flag[i][j]=COLOR_WHITE;
+                }
+                else {
+                    flag[i][j] = COLOR_GREEN;
+                }
+            }
+            y++;
             x++;
         }
-        x = 5;
-        for (int row = x; row<x+2; row++) {
-            for (int cell =0; cell<x; cell ++) {
-                flag[row][cell] = COLOR_BLACK;
-
+        x--;
+        y--;
+        rowIn=(int)(heigth*0.50);
+        for(int i=rowIn;i< flag.length;i++){
+            for(int j=0;j<x;j++){
+                if(j>flag[i].length*0.20){
+                    flag[i][j]=COLOR_WHITE;
+                }
+                else {
+                    flag[i][j] = COLOR_BLACK;
+                }
             }
-        }
-        x = 4;
-        rowend = (int)(heigth);
-         for (int row = 7; row<rowend; row++) {
-            for (int cell =x; cell>-1; cell --) {
-                flag[row][cell] = COLOR_BLACK;
+            for(int j=y;j<flag[i].length;j++){
+                if(i<flag.length*0.6666){
+                    flag[i][j]=COLOR_WHITE;
+                }
+                else {
 
+                        flag[i][j] = COLOR_RED;
+                }
             }
+            y--;
             x--;
         }
-        x = 1;
-         for (int row = 0; row<5;row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_GREEN;
 
-            }
-            x++;
-        }
-        x = 4;
-         for (int row = x; row<8; row++) {
-            for (int cell =5; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-         for (int row = 8; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-            x--;
-        } 
         return flag;
     }
+
+    
          public static int[][] createZAFFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int rowend =0;
-        int cellend = 0;
-        cellend = (int)(width);
-        rowend = (int)(heigth);
-        int x = 2;
-        for (int row = 0; row<4; row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-            x++;
-        }
-        x = 5;
-
-        for (int row = 8; row<rowend; row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_BLUE;
-
-            }
-            x--;
-        }
-         x = 6;
-        for (int row = 4; row<5; row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-        for (int row = 7; row<8; row++) {
-            for (int cell =x; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-        x = 0;
-        for (int row = 0; row<5; row++) {
-            for (int cell =x; cell<6; cell ++) {
-                if (row+1 == cell) {
-                flag[row][cell] = COLOR_WHITE;
+            int [][]flag=new int[heigth][width];
+            int rowIn=0;
+            int rowEnd=0;
+            int B=1;
+            int w=1;
+            rowEnd=(int)(heigth*0.50);
+            for(int f=rowIn;f< rowEnd;f++){
+                for(int c=0;c<B;c++){
+                    if(f-c>=flag.length*0.166666){
+                        if(f-c>(flag.length*0.208333333)&&flag.length<20||f-c>(flag.length*0.208333333)+1&&flag.length>=20){
+                            flag[f][c] = COLOR_BLACK;
+                        }
+                        else {
+                            flag[f][c] = COLOR_YELLOW;
+                        }
+                    }
+                    else {
+                        flag[f][c] = COLOR_GREEN;
+                    }
                 }
-            }
-            x--;
-        }
-         x = 10;
-        for (int row = rowend; row>6; row--) {
-            for (int cell =1; cell<6; cell ++) {
-                if (row-x-2 == cell) {
-                flag[row][cell] = COLOR_WHITE;
+                for(int c=w;c<flag[f].length;c++){
+                    if(f>flag.length*0.3333){
+                        if(f>flag.length*0.416633){
+                            flag[f][c]=COLOR_GREEN;
+                        }
+                        else {
+                            flag[f][c] = COLOR_WHITE;
+                        }
+                    }
+                    else {
+                        if(c==f+1||c==f+2&&flag.length>=20){
+                            flag[f][c] = COLOR_WHITE;
+                        }
+                        else {
+                            flag[f][c] = COLOR_RED;
+                        }
+                    }
                 }
+                w++;
+                B++;
             }
-            x-= 2;   
-        }
-         x = 0;
-        for (int row = 0; row<6; row++) {
-            for (int cell =x; cell<7; cell ++) {
-                if (row == cell) {
-                flag[row][cell] = COLOR_GREEN;
+            B--;
+            w--;
+            rowIn=(int)(heigth*0.50);
+            for(int f=rowIn;f< flag.length;f++){
+                for(int c=0;c<B;c++){
+                    if(f+c<=flag.length*0.75||f+c<=(flag.length*0.75)+1&&flag.length>=20){
+                        if(f+c<(flag.length*0.75)||f+c<(flag.length*0.75)&&flag.length>=20){
+                            flag[f][c] = COLOR_BLACK;
+                        }
+                        else {
+                            flag[f][c] = COLOR_YELLOW;
+                        }
+                    }
+                    else {
+                        flag[f][c] = COLOR_GREEN;
+                    }
+    
                 }
-            }
-            x--;
-        }
-        for (int row = 1; row<6; row++) {
-            for (int cell =x; cell<7; cell ++) {
-                if (row == cell+1) {
-                flag[row][cell] = COLOR_GREEN;
+                for(int c=w;c<flag[f].length;c++){
+                    if(f<flag.length*0.6666){
+                        if(f<flag.length*0.583267){
+                            flag[f][c]=COLOR_GREEN;
+                        }
+                        else {
+                            flag[f][c] = COLOR_WHITE;
+                        }
+                    }
+                    else {
+                        if(c+f== flag.length||c+f== flag.length+1&&flag.length>=20){
+                            flag[f][c] = COLOR_WHITE;
+                        }
+                        else {
+                            flag[f][c] = COLOR_BLUE;
+                        }
+                    }
                 }
+                w--;
+                B--;
             }
-            x--;
+    
+            return flag;
         }
-        
-          x = 9;
-        for (int row = rowend; row>5; row--) {
-            for (int cell =0; cell<6; cell ++) {
-                if (row-x-4 == cell) {
-                flag[row][cell] = COLOR_GREEN;
-                }
-            }
-            x-= 2;
-        }
-        for (int row = rowend-1; row>5; row--) {
-            for (int cell =0; cell<6; cell ++) {
-                if (row-x-3 == cell) {
-                flag[row][cell] = COLOR_GREEN;
-                }
-            }
-            x-= 2;
-        }
-        for (int row =5; row<7; row++) {
-            for (int cell =6; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_GREEN;
-            }
-        }
-         x = 0;
-        for (int row = 2; row<6; row++) {
-            for (int cell =x; cell<5; cell ++) {
-                if (row == cell+2) {
-                flag[row][cell] = COLOR_YELLOW;
-                }
-            }
-            x--;
-        }
-        x = 9;
-        for (int row = x; row>5; row--) {
-            for (int cell =0; cell<5; cell ++) {
-                if (row-x == cell) {
-                flag[row][cell] = COLOR_YELLOW;
-                }
-            }
-            x-= 2;
-        }
-         x = 1;
-        for (int row = 3; row<6; row++) {
-            for (int cell =0; cell<x; cell ++) {
-                flag[row][cell] = COLOR_BLACK;
-
-            }
-            x++;
-        }
-         x = 3;
-        for (int row = 6; row<9; row++) {
-            for (int cell =x-1; cell>-1; cell--) {
-                flag[row][cell] = COLOR_BLACK;
-
-            }
-            x--;
-        }
-        return flag;
-    }
+    
      public static int[][] createCHEFlag (int heigth, int width) {
-        int [][] flag = new int[heigth][width];
-        int cellend = 0;
-        cellend = (int)(width);
-        
-        for (int row = 0; row<1; row++) {
-            for (int cell =0; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-        for (int row = 1; row<4; row++) {
-            for (int cell =0; cell<8; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-        for (int row = 1; row<4; row++) {
-            for (int cell =12; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-        for (int row = 1; row<4; row++) {
-
-            for (int cell =8; cell<12; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-        for (int row = 4; row<8; row++) {
-            for (int cell =0; cell<5; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-         for (int row = 4; row<8; row++) {
-            for (int cell =15; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-        for (int row = 4; row<8; row++) {
-            for (int cell =5; cell<15; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-        for (int row = 8; row<11; row++) {
-            for (int cell =0; cell<8; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-         for (int row = 8; row<11; row++) {
-            for (int cell =12; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
-
-            }
-        }
-        for (int row = 8; row<11; row++) {
-            for (int cell =8; cell<12; cell ++) {
-                flag[row][cell] = COLOR_WHITE;
-
-            }
-        }
-        for (int row = 11; row>10; row--) {
-            for (int cell =0; cell<cellend; cell ++) {
-                flag[row][cell] = COLOR_RED;
+        int[][] flag = new int[heigth][width];
+        int rowIn = 0;
+        int rowEnd = flag.length;
+        for (int row = rowIn; row < rowEnd; row++) {
+            for (int cell = 0; cell < flag[row].length; cell++) {
+                if(row>0&&row!= rowEnd-1){
+                    if(cell>=flag[row].length*0.40&&cell<flag[row].length*0.60||row>flag.length*0.3333&&row< flag.length*0.6666&&cell>=flag[row].length*0.25&&cell<flag[row].length*0.75){
+                        flag[row][cell] = COLOR_WHITE;
+                    }
+                    else{
+                        flag[row][cell] = COLOR_RED;
+                    }
+                }
+                else {
+                    flag[row][cell] = COLOR_RED;
+                }
             }
         }
         return flag;
@@ -693,31 +532,31 @@ public class Main {
     public static void main(String[] args) {
     int[][] flag = {};
         
-        flag = createCOLFlag(12,20);
+        flag = createCOLFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createVENFlag(12,20);
+        flag = createVENFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createPOLFlag(12,20);
+        flag = createPOLFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createPANFlag(12,20);
+        flag = createPANFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createCHLFlag(12,20);
+        flag = createCHLFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createUSAFlag(12,20);
+        flag = createUSAFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createCZEFlag(12,20);
+        flag = createCZEFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createDNKFlag(12,20);
+        flag = createDNKFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createFINFlag(12,20);
+        flag = createFINFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createNORFlag(12,20);
+        flag = createNORFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);      
-        flag = createKWTFlag(12,20);
+        flag = createKWTFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createZAFFlag(12,20);
+        flag = createZAFFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
-        flag = createCHEFlag(12,20);
+        flag = createCHEFlag(24,40);
         JOptionPaneArrays.showColorArray2D(null,flag);
     }
 }
